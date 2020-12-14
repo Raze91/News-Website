@@ -9,6 +9,8 @@ $.ajax({
         $("#ctnr").append(
             `<article>
                 <img src="${result.urlToImage}" alt="">
+                <p>${result.title}</p>
+                <p>${result.description}</p>
             </article>
             `
         )
