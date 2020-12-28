@@ -1,5 +1,7 @@
 export default function () {
 
+    $("#root").empty()
+    
     $("#root").append(`
     <h1>Général</h1>
     <section id="ctnr"></section>
