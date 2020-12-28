@@ -12,7 +12,6 @@ export default function () {
         dataType: "json"
     })
         .then((result) => {
-            console.log("resultats=", result.articles)
             $("#ctnr").empty()
 
             $.each(result.articles, function (index, result) {
