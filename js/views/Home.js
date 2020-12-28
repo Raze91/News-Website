@@ -1,10 +1,10 @@
 export default function () {
 
     $("#root").empty()
-    
+
     $("#root").append(`
     <h1>Général</h1>
-    <section id="ctnr"></section>
+    <section id="ctnr"><h2>Loading ...</h2></section>
     `)
 
     $.ajax({
@@ -13,6 +13,7 @@ export default function () {
     })
         .then((result) => {
             console.log("resultats=", result.articles)
+            $("#ctnr").empty()
 
             $.each(result.articles, function (index, result) {
                 $("#ctnr").append(
@@ -25,6 +26,11 @@ export default function () {
                     </article>`
                 )
             })
+        })
+        .catch((error) => {
+            console.log(error);
+            $("#ctnr").empty();
+            $("#ctnr").append(`<h2>Une erreur est survenue ...</h2>`);
         })
 }
 
