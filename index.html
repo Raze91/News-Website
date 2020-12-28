@@ -7,23 +7,21 @@
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="https://unpkg.com/jquery"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//unpkg.com/navigo@6"></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li class="active"><a href="index.html">Accueil</a></li>
-                <li><a href="">Technologie</a></li>
-                <li><a href="">Divertissement</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/tech" data-navigo>Technologie</a></li>
+                <li><a href="/divertissement" data-navigo>Divertissement</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h1>Actualités Générales</h1>
-        <section id="ctnr">
 
-        </section>
-    </main>
-    <script src="js/index.js"></script>
+    <main id="root"></main>
+    <!-- <script src="js/index.js"></script> -->
+    <script type="module" src="js/router.js"></script>
 </body>
 </html>
