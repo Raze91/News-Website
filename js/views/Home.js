@@ -1,5 +1,7 @@
+import { router } from '../router.js';
 export default function () {
-
+    
+    sessionStorage.removeItem("articleList");
     $("#root").empty()
 
     $("#root").append(`
@@ -13,10 +15,10 @@ export default function () {
     })
         .then((result) => {
             $("#ctnr").empty()
-
+            sessionStorage.setItem("articleList", JSON.stringify(result))
             $.each(result.articles, function (index, result) {
                 $("#ctnr").append(
-                    `<article>
+                    `<article id="${result.title}">
                         <img src="${result.urlToImage}" alt="">
                         <div>
                             <h2>${result.title}</h2>
@@ -24,6 +26,11 @@ export default function () {
                         </div>
                     </article>`
                 )
+            })
+
+            $("article").on("click", function () {
+                console.log(this.id)
+                router.navigate(`/article/${this.id}`);
             })
         })
         .catch((error) => {
