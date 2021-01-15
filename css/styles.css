@@ -4,13 +4,14 @@ body {
 
 nav ul {
     display: flex;
+    justify-content: space-around;
     list-style: none;
     background-color: #11798e;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin-right: 50px;
     display: flex;
 }
 
@@ -21,7 +22,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 0;
 }
 
 .active {
@@ -59,4 +60,16 @@ article div {
 
 .article img {
     width: 800px;
+}
+
+@media (max-width: 640px) {
+    article {
+        flex-direction: column;
+    }
+    article img, article div {
+        width: 100%;
+    }
+    .article img {
+        width: 100%;
+    }
 }
