@@ -51,3 +51,12 @@ article div {
     text-align: center;
     margin: auto;
 }
+
+.article {
+    padding: 10px;
+    text-align: center;
+}
+
+.article img {
+    width: 800px;
+}

@@ -6,16 +6,20 @@ export default function (params) {
     $("#root").empty()
 
     articleList.forEach(element => {
-        console.log(element.title)
-        if (element.title === params) {
+        if (element.title.substring(0, 20) === params.substring(0, 20)) {
             console.log(element)
             selectedArticle = element;
         }
     });
-    if(selectedArticle) {
+    if (selectedArticle) {
         $("#root").append(`
-        <h1>${selectedArticle.title}</h1>
-        <img src="${selectedArticle.urlToImage}" alt="">
+        <section class="article">
+            <h1>${selectedArticle.title}</h1>
+            <p>Par ${(selectedArticle.author != null? selectedArticle.author : "Auteur inconnu")} le ${selectedArticle.publishedAt}</p>
+            <img src="${selectedArticle.urlToImage}" alt="">
+            <p>${selectedArticle.content}</p>
+            <p>${selectedArticle.description}</p>
+        </section>
         `)
     }
 }
