@@ -19,6 +19,7 @@ export default function (params) {
             <img src="${selectedArticle.urlToImage}" alt="">
             <p>${selectedArticle.content}</p>
             <p>${selectedArticle.description}</p>
+            <a href="${selectedArticle.url}" target="_blank">Lien vers l'article original</a>
         </section>
         `)
     }
