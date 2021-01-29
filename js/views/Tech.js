@@ -19,7 +19,7 @@ export default function () {
             $.each(result.articles, function (index, result) {
                 $("#ctnr").append(
                     `<article id="${result.title}">
-                    <img src="${result.urlToImage !== null ? result.urlToImage : "../assets/imageNotFound.png"}" alt="">
+                    <img src="${result.urlToImage !== null ? result.urlToImage : "assets/imageNotFound.png"}" alt="">
                         <div>
                             <h2>${result.title}</h2>
                             <p>${result.description !== null ? result.description : "Pas de Description"}</p>
