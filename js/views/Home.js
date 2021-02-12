@@ -10,7 +10,7 @@ export default function () {
     `)
 
     $.ajax({
-        url: 'http://cors-anywhere.herokuapp.com/' + 'http://newsapi.org/v2/top-headlines?country=fr&apiKey=20bd631a035141d1bb5cebb9b6529e1d',
+        url: 'http://newsapi.org/v2/top-headlines?country=fr&apiKey=20bd631a035141d1bb5cebb9b6529e1d',
         dataType: "json"
     })
         .then((result) => {
